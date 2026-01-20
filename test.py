@@ -25,7 +25,6 @@ class TestDEMDataset(Dataset):
         self.hr_sar_vv_paths = sorted(glob.glob(os.path.join(root_dir, 'SAR_VV', '*.tif')))
         self.hr_sar_vh_paths = sorted(glob.glob(os.path.join(root_dir, 'SAR_VH', '*.tif')))
 
-        # 断言检查以确保数据完整性
         assert len(self.hr_dem_paths) > 0, f"在目录 {root_dir} 中未找到任何数据，请检查路径。"
         assert len(self.hr_dem_paths) == len(self.lr_dem_paths)
         assert len(self.hr_dem_paths) == len(self.hr_sar_vv_paths)
@@ -44,7 +43,6 @@ class TestDEMDataset(Dataset):
         # 堆叠 SAR 通道，创建 (2, H, W) 的张量
         hr_sar = np.stack([hr_sar_vv, hr_sar_vh], axis=0)
 
-        # 获取基础文件名用于识别样本
         filename = os.path.basename(hr_dem_path)
 
         return {
@@ -220,3 +218,4 @@ if __name__ == '__main__':
     opt = parser.parse_args()
 
     test(opt)
+
