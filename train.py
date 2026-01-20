@@ -476,7 +476,7 @@ if __name__ == '__main__':
     parser.add_argument('--psdWeight', type=float, default=0, help='weight for the PSD loss component, the default setting is 0, which yields better results.')
     parser.add_argument('--slopeWeight', type=float, default=0.2, help='weight for the slope loss component')
 
-    parser.add_argument('--out', default=r'E:\DEMSR\RESULTS\Train11',
+    parser.add_argument('--out', default=r'E:\DEMSR\RESULTS\Train',
                         help='folder to output images and model checkpoints')
     parser.add_argument('--resume_weight', type=str, default="", help='path to checkpoint file to resume from')
     parser.add_argument('--auto_resume', action='store_true',
@@ -485,4 +485,5 @@ if __name__ == '__main__':
     parser.add_argument('--vis_samples', type=int, default=4, help='number of samples to save for visualization')
 
     opt = parser.parse_args()
+
     main(opt)
