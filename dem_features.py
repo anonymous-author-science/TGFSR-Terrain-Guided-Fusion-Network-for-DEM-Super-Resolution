@@ -1,5 +1,3 @@
-# dem_features.py
-
 import torch.nn as nn
 import torch
 from torch.nn import functional as F
@@ -45,7 +43,7 @@ class Slope(nn.Module):
         ij_slope = torch.sqrt(torch.pow(dx, 2) + torch.pow(dy, 2))
         ij_slope = torch.arctan(ij_slope) * 180 / math.pi
 
-        # 将坡度归一化到 [-1, 1] 范围内，这有助于稳定训练
         normalized_slope = (ij_slope / 90.0) * 2.0 - 1.0
 
         return normalized_slope
+
