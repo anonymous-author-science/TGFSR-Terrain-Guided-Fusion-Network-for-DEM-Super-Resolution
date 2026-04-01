@@ -50,6 +50,8 @@ pip install numpy gdal scikit-image matplotlib tqdm
 
 Organize your dataset into the following directory structure. The filenames for corresponding LR, HR, and SAR images should be identical.
 
+Training and testing data can be obtained [here](https://doi.org/10.6084/m9.figshare.31868503).
+
 ```
 /path/to/your/dataset/
 ├── train/
